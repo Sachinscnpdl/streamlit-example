@@ -28,7 +28,7 @@ ef= ElementFraction()
 stc = StrToComposition()
 
 # Define a list of chemical formulas
-chemical_formulas = ['H2O', 'CO2', 'NaCl']
+chemical_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 
 # Set Streamlit app title
 st.title('Chemical Formula Selection')
@@ -54,9 +54,10 @@ In the meantime, below is an example of what you can do with just a few lines of
 """
 #############################################################################################################################
 # Add the prediction files
-df_piezo = pd.read_csv('csv/For_Prediction.csv')
-df_piezo = df_piezo.head(50)
-
+#df_piezo = pd.read_csv('csv/For_Prediction.csv')
+#df_piezo = df_piezo.head(50)
+############################################################    Added input compositions
+df_piezo = pd.DataFrame('formula_pretty': [selected_formula])
 df_piezo = stc.featurize_dataframe(df_piezo, "formula_pretty",ignore_errors=True,return_errors=True)
 df_piezo = ef.featurize_dataframe(df_piezo, "composition",ignore_errors=True,return_errors=True)
 
