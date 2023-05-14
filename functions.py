@@ -6,7 +6,7 @@ import streamlit as st
 
 import pymatgen
 import matminer
-
+from pymatgen.core.composition import Composition
 
 def properties_calculation(dataframe):
     
