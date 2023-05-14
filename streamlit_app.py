@@ -3,7 +3,9 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+
 import pymatgen
+import matminer
 
 #Import Libraries
 from pymatgen.core.composition import Composition, Element
