@@ -4,3 +4,4 @@ streamlit
 pymatgen
 matminer
 matminer==0.6.3
+seaborn
