@@ -27,6 +27,10 @@ import matplotlib.pyplot as plt
 ef= ElementFraction()
 stc = StrToComposition()
 
+# Add the function.py file
+from functions import *
+
+
 # Define a list of chemical formulas
 chemical_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 
@@ -68,7 +72,7 @@ df_piezo = featurizer.featurize_dataframe(df_piezo, col_id='composition')
 #y = bg_data_featurized['gap expt']
 
 # In[5]:
-get_ipython().run_line_magic('run', 'functions.ipynb')
+# get_ipython().run_line_magic('run', 'functions.ipynb')
 df, df_input_target = properties_calculation(df_piezo)
 
 # In[6]:
