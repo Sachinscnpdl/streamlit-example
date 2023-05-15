@@ -51,13 +51,11 @@ if selected_predefined_formula:
     selected_formulas.append(selected_predefined_formula)
 
 # Add an option to manually input a formula
-manual_input = st.checkbox('Enter a custom formula')
+next_input = st.checkbox('Add next Piezo-Material')
 
 # If manual input is selected, display an input box for the custom formula
-if manual_input:
-    custom_formula = st.text_input('Enter the custom formula')
-    if custom_formula:
-        selected_formulas.append(custom_formula)
+if next_input:
+    selected_formulas.append(selected_predefined_formula)
 
 # Display the selected formulas
 if selected_formulas:
