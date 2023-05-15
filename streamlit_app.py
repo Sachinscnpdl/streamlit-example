@@ -58,9 +58,7 @@ next_input = st.checkbox('Add next Piezo-Material', value=False)
 
 # If manual input is selected, display an input box for the custom formula
 while next_input:
-    custom_formula = st.text_input('Enter the custom formula')
-    if custom_formula:
-        df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': custom_formula}, ignore_index=True)
+    df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': custom_formula}, ignore_index=True)
     next_input = st.checkbox('Add next Piezo-Material', value=False)
 
 # Display the selected formulas
