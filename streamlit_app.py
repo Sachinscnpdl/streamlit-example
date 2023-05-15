@@ -37,25 +37,31 @@ from functions import *
 st.title('Chemical Formula Selection')
 
 
-# Add an option to manually input a formula
-next_input = st.checkbox('Add next Piezo-Material')
+import streamlit as st
+import pandas as pd
 
+# Set Streamlit app title
+st.title('Chemical Formula Selection')
 
 # Create a DataFrame to store the selected formulas
 data = {'S.N': [], 'Piezo Materials': []}
 df_selected_formulas = pd.DataFrame(data)
 
 # Add a dropdown to select a pre-defined formula
-predefined_formulas = [' ','Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
+predefined_formulas = [' ', 'Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
 if selected_predefined_formula:
     df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': selected_predefined_formula}, ignore_index=True)
 
+# Add an option to manually input a formula
+next_input = st.checkbox('Add next Piezo-Material')
+
 # If manual input is selected, display an input box for the custom formula
-if next_input:
+while next_input:
     custom_formula = st.text_input('Enter the custom formula')
     if custom_formula:
         df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': custom_formula}, ignore_index=True)
+    next_input = st.checkbox('Add next Piezo-Material')
 
 # Display the selected formulas
 if not df_selected_formulas.empty:
