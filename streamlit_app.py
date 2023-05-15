@@ -249,6 +249,14 @@ y_cat = model_cat.predict(df_pca)
 
 # In[14]:
 category = np.where(y_cat[:, 0] > 0.5, 'A', 'B')
+####################################################################
+"""
+## The Crysrtal Structure
+
+st.write("Category is CAT :", category)
+
+"""
+#####################################################################
 subcategories = []
 y_tensor = []
 
@@ -290,7 +298,14 @@ else:
         subcategories.append(subcategory)
 #         y_tensor.append(y_value)
 
+####################################################################
+"""
+## The Crysrtal Structure with point
 
+st.write("Crystal Structure is :", subcategories)
+
+"""
+#####################################################################
 # In[15]:
 
 import multiprocessing
