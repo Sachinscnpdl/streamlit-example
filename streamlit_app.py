@@ -51,10 +51,10 @@ predefined_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti
 selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
 # If manual input is selected, display an input box for the custom formula
 
-# Display the selected formulas
-if not df_selected_formulas.empty:
-    st.write('Selected Formulas:')
-    st.dataframe(df_selected_formulas)
+# # Display the selected formulas
+# if not df_selected_formulas.empty:
+#     st.write('Selected Formulas:')
+#     st.dataframe(df_selected_formulas)
 
 
 
