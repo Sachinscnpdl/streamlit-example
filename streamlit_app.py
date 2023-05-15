@@ -38,7 +38,7 @@ st.title('Chemical Formula Selection')
 
 
 # Add a checkbox to add new rows
-add_new_row = st.checkbox('Add next Piezo-Material')
+add_new_row = st.checkbox('Add next Piezo-Materials:')
 
 # Add an option to manually input a formula
 next_input = st.checkbox('Add next Piezo-Material')
