@@ -34,25 +34,21 @@ from functions import *
 
 import streamlit as st
 
-# Set Streamlit app title
-st.title('Chemical Formula Selection')
-
-import streamlit as st
-import pandas as pd
-
-# Set Streamlit app title
-st.title('Chemical Formula Selection')
-
 import streamlit as st
 
 # Set Streamlit app title
 st.title('Chemical Formula Selection')
 
 # List of pre-defined chemical formulas
-chemical_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
+predefined_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 
-# Add a dropdown to select a chemical formula
-selected_formula = st.selectbox('Select a chemical formula', chemical_formulas)
+# Create a list to store the selected formulas
+selected_formulas = []
+
+# Add a dropdown to select a pre-defined formula
+selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
+if selected_predefined_formula:
+    selected_formulas.append(selected_predefined_formula)
 
 # Add an option to manually input a formula
 manual_input = st.checkbox('Enter a custom formula')
@@ -60,12 +56,14 @@ manual_input = st.checkbox('Enter a custom formula')
 # If manual input is selected, display an input box for the custom formula
 if manual_input:
     custom_formula = st.text_input('Enter the custom formula')
+    if custom_formula:
+        selected_formulas.append(custom_formula)
 
-# Display the selected or custom formula
-if manual_input and custom_formula:
-    st.write('You entered:', custom_formula)
-else:
-    st.write('You selected:', selected_formula)
+# Display the selected formulas
+if selected_formulas:
+    st.write('Selected Formulas:')
+    for formula in selected_formulas:
+        st.write(formula)
 
 
 
