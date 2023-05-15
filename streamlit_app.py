@@ -340,9 +340,9 @@ def ensemble_model(df_pred, model_path= 'model_files/nn_model/cubic/'):
     model_cache[model_path] = ensemble_prediction
     return ensemble_prediction
 
-# In[16]:
-df_pca = df_features.values
-ensemble_model(df_pca[5], model_path='model_files/nn_model/hextetramm/')
+# # In[16]:
+# df_pca = df_features.values
+# ensemble_model(df_pca[5], model_path='model_files/nn_model/hextetramm/')
 
 # In[17]:
 print("This has to be printed")
