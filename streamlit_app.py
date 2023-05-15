@@ -32,27 +32,31 @@ stc = StrToComposition()
 # Add the function.py file
 from functions import *
 
-# Define the list of chemical formulas
-chemical_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
+import streamlit as st
 
 # Set Streamlit app title
 st.title('Chemical Formula Selection')
 
-# Add a dropdown to select a chemical formula
-selected_formula = st.selectbox('Select a chemical formula', chemical_formulas)
+# List to store the chemical formulas
+chemical_formulas = []
 
-# Add an option to manually input a formula
-manual_input = st.checkbox('Enter a custom formula')
+# Function to handle adding a new formula input field
+def add_formula():
+    chemical_formulas.append("")
 
-# If manual input is selected, display an input box for the custom formula
-if manual_input:
-    custom_formula = st.text_input('Enter the custom formula')
+# Add a button to add a new formula input field
+if st.button('Add Formula'):
+    add_formula()
 
-# Display the selected or custom formula
-if manual_input and custom_formula:
-    st.write('You entered:', custom_formula)
-else:
-    st.write('You selected:', selected_formula)
+# Add input fields for chemical formulas
+for i, formula in enumerate(chemical_formulas):
+    formula_input = st.text_input(f'Formula {i + 1}', formula)
+    chemical_formulas[i] = formula_input
+
+# Display the selected formulas
+st.write('Selected Formulas:')
+for formula in chemical_formulas:
+    st.write(formula)
 
 
 # Display the selected formula
