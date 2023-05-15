@@ -83,7 +83,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 #df_piezo = df_piezo.head(50)
 ############################################################    Added input compositions
 #df_piezo = pd.DataFrame({'formula_pretty': [selected_formula]})
-df_piezo = stc.featurize_dataframe(df_piezo, "formula_pretty",ignore_errors=True,return_errors=True)
+df_piezo = stc.featurize_dataframe(df_piezo, 'Piezo Materials',ignore_errors=True,return_errors=True)
 df_piezo = ef.featurize_dataframe(df_piezo, "composition",ignore_errors=True,return_errors=True)
 
 # In[4]:
