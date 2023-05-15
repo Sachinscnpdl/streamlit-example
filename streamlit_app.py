@@ -37,6 +37,12 @@ import streamlit as st
 # Set Streamlit app title
 st.title('Chemical Formula Selection')
 
+import streamlit as st
+import pandas as pd
+
+# Set Streamlit app title
+st.title('Chemical Formula Selection')
+
 # List to store the chemical formulas
 chemical_formulas = []
 
@@ -53,14 +59,12 @@ for i, formula in enumerate(chemical_formulas):
     formula_input = st.text_input(f'Formula {i + 1}', formula)
     chemical_formulas[i] = formula_input
 
+# Convert selected formulas to a DataFrame
+df_piezo = pd.DataFrame({'formula_pretty': chemical_formulas})
+
 # Display the selected formulas
 st.write('Selected Formulas:')
-for formula in chemical_formulas:
-    st.write(formula)
-
-
-# Display the selected formula
-#st.write('Selected formula:', selected_formula)
+st.write(df_piezo)
 
 
 
@@ -80,7 +84,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 #df_piezo = pd.read_csv('csv/For_Prediction.csv')
 #df_piezo = df_piezo.head(50)
 ############################################################    Added input compositions
-df_piezo = pd.DataFrame({'formula_pretty': [selected_formula]})
+#df_piezo = pd.DataFrame({'formula_pretty': [selected_formula]})
 df_piezo = stc.featurize_dataframe(df_piezo, "formula_pretty",ignore_errors=True,return_errors=True)
 df_piezo = ef.featurize_dataframe(df_piezo, "composition",ignore_errors=True,return_errors=True)
 
