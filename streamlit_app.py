@@ -48,7 +48,7 @@ data = {'S.N': [], 'formula_pretty': []}
 df_selected_formulas = pd.DataFrame(data)
 
 # Add a dropdown to select a pre-defined formula
-predefined_formulas = [' ','Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
+predefined_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
 if selected_predefined_formula:
     df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'formula_pretty': selected_predefined_formula}, ignore_index=True)
