@@ -44,20 +44,20 @@ next_input = st.checkbox('Add next Piezo-Material')
 
 
 # Create a DataFrame to store the selected formulas
-data = {'S.N': [], 'Piezo Materials': []}
+data = {'S.N': [], 'formula_pretty': []}
 df_selected_formulas = pd.DataFrame(data)
 
 # Add a dropdown to select a pre-defined formula
 predefined_formulas = [' ','Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti0.90Zr0.10O3', 'BaTiO3']
 selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
 if selected_predefined_formula:
-    df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': selected_predefined_formula}, ignore_index=True)
+    df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'formula_pretty': selected_predefined_formula}, ignore_index=True)
 
 # If manual input is selected, display an input box for the custom formula
 if next_input:
     custom_formula = st.text_input('Enter the custom formula')
     if custom_formula:
-        df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'Piezo Materials': custom_formula}, ignore_index=True)
+        df_selected_formulas = df_selected_formulas.append({'S.N': len(df_selected_formulas) + 1, 'formula_pretty': custom_formula}, ignore_index=True)
 
 # Display the selected formulas
 if not df_selected_formulas.empty:
@@ -65,7 +65,7 @@ if not df_selected_formulas.empty:
     st.dataframe(df_selected_formulas)
 
 df_piezo = df_selected_formulas
-
+# 'Piezo Materials' == 'formula_pretty'
 """
 
 # Welcome to PiezoTensorNet!
@@ -83,7 +83,7 @@ In the meantime, below is an example of what you can do with just a few lines of
 #df_piezo = df_piezo.head(50)
 ############################################################    Added input compositions
 #df_piezo = pd.DataFrame({'formula_pretty': [selected_formula]})
-df_piezo = stc.featurize_dataframe(df_piezo, 'Piezo Materials',ignore_errors=True,return_errors=True)
+df_piezo = stc.featurize_dataframe(df_piezo, 'formula_pretty',ignore_errors=True,return_errors=True)
 df_piezo = ef.featurize_dataframe(df_piezo, "composition",ignore_errors=True,return_errors=True)
 
 # In[4]:
