@@ -379,7 +379,7 @@ for item in range(df_pca.shape[0]):
 y_tensor
 
 # In[19]:
-y_tensor[1]
+# y_tensor[1]
 ##################################################################################################
 # End of Prediction
 
