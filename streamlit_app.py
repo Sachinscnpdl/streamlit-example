@@ -60,7 +60,7 @@ for formula in chemical_formulas:
 
 
 # Display the selected formula
-st.write('Selected formula:', selected_formula)
+#st.write('Selected formula:', selected_formula)
 
 
 
