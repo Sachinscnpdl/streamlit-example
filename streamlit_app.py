@@ -32,9 +32,6 @@ stc = StrToComposition()
 # Add the function.py file
 from functions import *
 
-import streamlit as st
-
-import streamlit as st
 
 # Set Streamlit app title
 st.title('Chemical Formula Selection')
@@ -45,24 +42,33 @@ predefined_formulas = ['Ba0.85Ca0.15Ti0.92Zr0.07Hf0.01O3', 'Ba0.84Ca0.15Sr0.01Ti
 # Create a list to store the selected formulas
 selected_formulas = []
 
+# Function to add a new row to the table
+def add_row(table_data):
+    table_data.append("")
+
 # Add a dropdown to select a pre-defined formula
 selected_predefined_formula = st.selectbox('Select a pre-defined formula', predefined_formulas)
 if selected_predefined_formula:
     selected_formulas.append(selected_predefined_formula)
 
-# Add an option to manually input a formula
-next_input = st.checkbox('Add next Piezo-Material')
+# Add a checkbox to add new rows
+add_new_row = st.checkbox('Add next Piezo-Material')
 
-# If manual input is selected, display an input box for the custom formula
-if next_input:
-    selected_formulas.append(selected_predefined_formula)
+# If checkbox is selected, display additional rows
+if add_new_row:
+    add_row(selected_formulas)
 
-# Display the selected formulas
+# Display the selected formulas in a table
 if selected_formulas:
     st.write('Selected Formulas:')
-    for formula in selected_formulas:
-        st.write(formula)
+    table_data = [[formula] for formula in selected_formulas]
+    table_data = st.table(table_data)
 
+    # Get the table's data as a list
+    updated_table_data = table_data.get_table_data()
+
+    # Update the selected formulas with the table data
+    selected_formulas = [row[0] for row in updated_table_data]
 
 
 
