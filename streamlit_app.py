@@ -253,9 +253,10 @@ category = np.where(y_cat[:, 0] > 0.5, 'A', 'B')
 """
 ## The Crysrtal Structure
 
-st.write("Category is CAT :", category)
+
 
 """
+st.write("Category is CAT :", category)
 #####################################################################
 subcategories = []
 y_tensor = []
@@ -300,11 +301,11 @@ else:
 
 ####################################################################
 """
-## The Crysrtal Structure with point
+### The Crysrtal Structure with point
 
-st.write("Crystal Structure is :", subcategories)
 
 """
+st.write("Crystal Structure is :", subcategories)
 #####################################################################
 # In[15]:
 
