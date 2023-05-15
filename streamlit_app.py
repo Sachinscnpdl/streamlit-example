@@ -58,7 +58,7 @@ if not df_selected_formulas.empty:
 
 
 
-df_piezo = df_selected_formulas
+df_piezo = selected_predefined_formula
 
 """
 
