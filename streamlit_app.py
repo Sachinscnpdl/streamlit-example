@@ -41,7 +41,7 @@ st.title('Chemical Formula Selection')
 
 # Create a DataFrame to store the selected formulas
 # data = {'S.N': [], 'Piezo Materials': []}
-df_selected_formulas = pd.DataFrame(data)
+# df_selected_formulas = pd.DataFrame(data)
 
 # Add an option to manually input a formula
 next_input = st.checkbox('Add next Piezo-Material', value=False)
