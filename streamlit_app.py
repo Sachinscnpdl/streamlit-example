@@ -18,6 +18,8 @@ from matminer.utils import data_files #for importing "Miedema.csv" present insid
 from matplotlib.ticker import MultipleLocator # for minor tick lines
 import seaborn as sns
 
+import tensorflow as tf
+
 import pandas as pd
 pd.set_option('display.max_columns', None)
 import numpy as np
