@@ -10,4 +10,3 @@ tensorflow
 keras
 array_to_latex
 setuptools
-subprocess
