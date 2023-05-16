@@ -409,6 +409,8 @@ for item in range(df_pca.shape[0]):
 # y_tensor
 my_tensor = np.array(y_tensor[0])
 my_tensor = np.around(my_tensor, decimals=3)
+my_tensor = np.where(my_tensor == 0.0, 0, my_tensor)
+
 # my_df = pd.dataframe(y_tensor[0])
 ####################################################################
 """
