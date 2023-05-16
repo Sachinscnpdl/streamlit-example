@@ -421,7 +421,7 @@ y_tensor
 ######################################################################################################
 
 # This is a working codes
-matrixData = my_tensor
+# matrixData = my_tensor
 
 import matlab.engine
 import numpy as np
