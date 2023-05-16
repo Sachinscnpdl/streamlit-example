@@ -422,7 +422,7 @@ st.write("Matrix displayed as a dataframe:")
 
 # LaTeX matrix
 matrix = r"\begin{pmatrix}" \
-         r"1 & 2 & 3 \\" \
+         r"my_tensor[0][0] & 2 & 3 \\" \
          r"4 & 5 & 6 \\" \
          r"7 & 8 & 9" \
          r"\end{pmatrix}"
