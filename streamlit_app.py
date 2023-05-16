@@ -422,13 +422,13 @@ y_tensor
 
 # This is a working codes
 # matrixData = my_tensor
-
+system('python setup.py install')
 import matlab.engine
 import numpy as np
 
 # Start the MATLAB Engine
-# eng = matlab.engine.start_matlab()
-eng = matlab.engine.connect_matlab(url='https://matlab.mathworks.com', email='sachin.poudel@polsl.pl', password='Poudel@03')
+eng = matlab.engine.start_matlab()
+
 # Define the matrix in Python
 matrixData = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
