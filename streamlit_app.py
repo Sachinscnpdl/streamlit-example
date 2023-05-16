@@ -427,7 +427,7 @@ st.dataframe(my_tensor)
 
 # Display matrix as a table
 st.write("Matrix displayed as a table:")
-st.table(my_tensor)
+st.markdown(my_tensor.to_string(index=False, header=False, justify="center"), unsafe_allow_html=True)
 st.write("Matrix:")
 st.write(my_tensor, type="text")
 
