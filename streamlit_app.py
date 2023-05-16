@@ -413,6 +413,7 @@ for item in range(df_pca.shape[0]):
 # In[18]:
 # y_tensor
 my_tensor = np.array(y_tensor[0])
+my_df = pd.dataframe(y_tensor[0])
 ####################################################################
 """
 ## The Piezo Tensor is
@@ -428,7 +429,7 @@ st.dataframe(my_tensor)
 # Display matrix as a table
 st.write("Matrix-like format:")
 # my_tensor = my_tensor.dataframe()
-st.markdown('```\n{}\n```'.format(my_tensor.to_string(index=False, header=False)))
+st.markdown('```\n{}\n```'.format(my_df.to_string(index=False, header=False)))
 
 st.write("Matrix:")
 st.write(my_tensor, type="text")
