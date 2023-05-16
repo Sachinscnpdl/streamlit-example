@@ -413,7 +413,7 @@ for item in range(df_pca.shape[0]):
             
     elif y_cat[item][0] < 0.5 and subcategories[item] == ['hextetramm']:
         y = ensemble_model(df_predict[item], model_path='model_files/nn_model/hextetramm/') 
-        y_value = [[0, 0, 0, 0, y[0], 0], [0, 0, 0, y[0], 0, 0], [y[1], y[2], y[3], 0, 0, 0]]
+        y_value = [[0, 0, 0, 0, y[0], 0], [0, 0, 0, y[0], 0, 0], [y[1], y[1], y[2], 0, 0, 0]]
 
     y_tensor.append(y_value)
 
