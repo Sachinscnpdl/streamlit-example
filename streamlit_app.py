@@ -419,7 +419,7 @@ st.write("Category is CAT :", my_tensor)
 
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
-st.dataframe(my_tensor, index=False, header=False)
+st.write(np.array2string(my_tensor, formatter={'int':lambda x: f"[{x:2d}]"}))
 
 
 
