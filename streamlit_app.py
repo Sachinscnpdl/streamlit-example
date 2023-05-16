@@ -427,7 +427,7 @@ my_tensor = np.array([[1.23456, 23.45678], [456.23, 8.239521]])
 tensor_latex = a2l.to_ltx(my_tensor, frmt='{:.2f}', arraytype='array')
 
 # Display tensor in LaTeX form
-st.latex(tensor_latex)
+st.write(tensor_latex)
 #####################################################################
 # In[19]:
 # y_tensor[1]
