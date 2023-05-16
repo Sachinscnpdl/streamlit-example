@@ -510,7 +510,7 @@ tensor_path = 'my_tensor.npy'
 np.save(tensor_path, my_tensor)
 
 # Add a download link to the Streamlit app
-st.download_button("Download NumPy Array as Tensor", tensor_path, file_label="Download")
+st.download_button("Download NumPy Array as Tensor", tensor_path)
 
 
 
