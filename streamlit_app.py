@@ -428,7 +428,7 @@ st.dataframe(my_tensor)
 # Display matrix as a table
 st.write("Matrix-like format:")
 # my_tensor = my_tensor.dataframe()
-st.markdown('```\n{}\n```'.format(df.to_string(index=False, header=False)))
+st.markdown('```\n{}\n```'.format(my_tensor.to_string(index=False, header=False)))
 
 st.write("Matrix:")
 st.write(my_tensor, type="text")
