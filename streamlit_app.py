@@ -421,9 +421,9 @@ st.write("Category is CAT :", my_tensor)
 st.write("Matrix displayed as a dataframe:")
 
 import array_to_latex as a2l
-A = np.array([[1.23456, 23.45678],[456.23, 8.239521]])
-a2l.to_ltx(A, frmt = '{:6.2f}', arraytype = 'array')
-
+# A = np.array([[1.23456, 23.45678],[456.23, 8.239521]])
+tensor_latex = a2l.to_ltx(my_tensor, frmt = '{:6.2f}', arraytype = 'array')
+st.latex(tensor_latex)
 #####################################################################
 # In[19]:
 # y_tensor[1]
