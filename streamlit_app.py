@@ -502,17 +502,19 @@ import subprocess
 # Define the path to the file
 file_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/Piezoelectric Tensors/"
 
-# Convert NumPy array to a DataFrame
-df = pd.DataFrame(my_tensor, columns=["Values"])
+# Create a NumPy array
+my_array = np.array([1, 2, 3, 4, 5])
 
-# Define the file path to save the CSV file
-csv_path = "my_tensor.csv"
+# Define the file path to save the tensor file
+tensor_path = "my_array.npy"
 
-# Save the DataFrame as a CSV file
-df.to_csv(csv_path, index=False)
+# Save the NumPy array as a tensor file
+np.save(tensor_path, my_tensor)
 
 # Add a download link to the Streamlit app
-st.download_button("Download Piezo Tensor as CSV", csv_path)
+st.download_button("Download NumPy Array as Tensor", tensor_path)
+
+
 
 
 
