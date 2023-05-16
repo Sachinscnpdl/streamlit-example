@@ -419,13 +419,10 @@ st.write("Category is CAT :", my_tensor)
 
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
-st.write(np.array2string(my_tensor, formatter={'int':lambda x: f"[{x:2d}]"}))
-latex = np.array2string(my_tensor, formatter={'all': lambda x: f'{x}'}, separator=' & ',
-                        prefix='\\begin{bmatrix}\n', suffix='\n\\end{bmatrix}')
 
-# Display array in LaTeX form
-st.latex(latex)
-
+import array_to_latex as a2l
+A = np.array([[1.23456, 23.45678],[456.23, 8.239521]])
+a2l.to_ltx(A, frmt = '{:6.2f}', arraytype = 'array')
 
 #####################################################################
 # In[19]:
