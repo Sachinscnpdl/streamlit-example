@@ -503,14 +503,18 @@ import subprocess
 file_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/Piezoelectric Tensors/"
 
 # Create a NumPy array
-my_array = np.array([1, 2, 3, 4, 5])
+# my_array = np.array([1, 2, 3, 4, 5])
 
 # Save the NumPy array as a tensor file
 tensor_path = 'my_tensor.npy'
 np.save(tensor_path, my_tensor)
 
-# Add a download link to the Streamlit app
-st.download_button("Download NumPy Array as Tensor", tensor_path)
+# Add a download button to the Streamlit app
+if st.button("Download NumPy Array as Tensor"):
+    with open(tensor_path, "rb") as file:
+        contents = file.read()
+        st.download_button(label="Click here to download", data=contents, file_name="my_array.npy")
+
 
 
 
