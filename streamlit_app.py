@@ -324,7 +324,7 @@ else:
 
 
 """
-st.write("Crystal Structure is :", subcategories)
+st.write("Crystal Structure is :", subcategories[0])
 #####################################################################
 # In[15]:
 
@@ -419,7 +419,7 @@ y_tensor
 
 
 """
-st.write("Category is CAT :", y_tensor)
+st.write("Category is CAT :", y_tensor[0])
 #####################################################################
 # In[19]:
 # y_tensor[1]
