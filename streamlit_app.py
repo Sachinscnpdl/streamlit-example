@@ -504,6 +504,9 @@ st.latex(matrix)
 # # eng.quit()
 
 
+local_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/"
+with open("my_tensor.pkl", "wb") as f:
+    pickle.dump(my_tensor, f)
 
 
 ###########################################################################################################
