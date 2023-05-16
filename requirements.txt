@@ -8,4 +8,4 @@ seaborn
 pymatgen==2022.0.8
 tensorflow
 keras
-mmatlabengine==9.14.3
+mmatlabengine
