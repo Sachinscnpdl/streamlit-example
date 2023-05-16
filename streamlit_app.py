@@ -420,10 +420,15 @@ st.write("Category is CAT :", my_tensor)
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
 
-\begin{pmatrix}
-   my_tensor[0][0] & my_tensor[0][1]\\
-   c & d
-\end{pmatrix}
+# LaTeX matrix
+matrix = r"\begin{pmatrix}" \
+         r"1 & 2 & 3 \\" \
+         r"4 & 5 & 6 \\" \
+         r"7 & 8 & 9" \
+         r"\end{pmatrix}"
+
+# Display LaTeX matrix using st.latex()
+st.latex(matrix)
 
 
 #####################################################################
