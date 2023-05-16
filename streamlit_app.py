@@ -429,7 +429,7 @@ st.dataframe(my_tensor)
 st.write("Matrix displayed as a table:")
 st.table(my_tensor)
 st.write("Matrix:")
-st.write(my_tensor, type="table")
+st.write(my_tensor, type="text")
 
 
 #####################################################################
