@@ -8,5 +8,4 @@ seaborn
 pymatgen==2022.0.8
 tensorflow
 keras
-matlab.engine
 matlab-engine-api
