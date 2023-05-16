@@ -409,7 +409,7 @@ for item in range(df_pca.shape[0]):
 # y_tensor
 my_tensor = np.array(y_tensor[0])
 my_tensor = np.around(my_tensor, decimals=3)
-# my_tensor = np.trim_zeros(my_tensor, 'b')
+my_tensor = np.trim_zeros(my_tensor, 'b')
 
 # my_df = pd.dataframe(y_tensor[0])
 ####################################################################
