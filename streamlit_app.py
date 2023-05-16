@@ -420,14 +420,12 @@ st.write("Category is CAT :", my_tensor)
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
 
-import array_to_latex as a2l
-my_tensor = np.array([[1.23456, 23.45678], [456.23, 8.239521]])
+\begin{pmatrix}
+   my_tensor[0][0] & my_tensor[0][1]\\
+   c & d
+\end{pmatrix}
 
-# Convert tensor to LaTeX representation
-tensor_latex = a2l.to_ltx(my_tensor, frmt='{:.2f}', arraytype='array')
 
-# Display tensor in LaTeX form
-st.write(tensor_latex)
 #####################################################################
 # In[19]:
 # y_tensor[1]
