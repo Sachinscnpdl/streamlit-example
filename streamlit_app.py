@@ -411,15 +411,26 @@ for item in range(df_pca.shape[0]):
     y_tensor.append(y_value)
 
 # In[18]:
-y_tensor
+# y_tensor
+my_tensor = np.array(y_tensor[0])
 ####################################################################
 """
 ## The Piezo Tensor is
 
 
-
 """
-st.write("Category is CAT :", y_tensor[0])
+st.write("Category is CAT :", my_tensor)
+
+# Display matrix as a dataframe
+st.write("Matrix displayed as a dataframe:")
+st.dataframe(my_tensor)
+
+# Display matrix as a table
+st.write("Matrix displayed as a table:")
+st.table(my_tensor)
+
+
+
 #####################################################################
 # In[19]:
 # y_tensor[1]
