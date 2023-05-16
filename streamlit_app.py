@@ -420,16 +420,28 @@ st.write("Category is CAT :", my_tensor)
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
 
-# LaTeX matrix
-matrix = r"\begin{pmatrix}" \
-         r"my_tensor[0][0] & 2 & 3 \\" \
-         r"4 & 5 & 6 \\" \
-         r"7 & 8 & 9" \
-         r"\end{pmatrix}"
+# Define the matrix size
+rows = 3
+cols = 6
+
+
+# Create the LaTeX matrix string
+matrix = r"\begin{pmatrix}"
+
+# Append the values to the matrix string
+for i in range(rows):
+    for j in range(cols):
+        matrix += str(my_tensor[i, j])
+        if j < cols - 1:
+            matrix += " & "
+        else:
+            matrix += r" \\"
+
+# Close the matrix string
+matrix += r"\end{pmatrix}"
 
 # Display LaTeX matrix using st.latex()
 st.latex(matrix)
-
 
 #####################################################################
 # In[19]:
