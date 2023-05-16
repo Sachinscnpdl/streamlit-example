@@ -1,19 +1,6 @@
 import pkg_resources
 import subprocess
 import sys
-def install_missing_packages(requirements_file):
-    required_packages = open(requirements_file).readlines()
-
-    # Check if each package is already installed
-    installed_packages = [pkg.key for pkg in pkg_resources.working_set]
-    packages_to_install = [pkg for pkg in required_packages if pkg.strip().split("==")[0] not in installed_packages]
-
-    if packages_to_install:
-        # Install the missing packages
-        subprocess.check_call([sys.executable, "-m", "pip", "install", *packages_to_install])
-
-if __name__ == "__main__":
-    install_missing_packages('requirements.txt')
 
 
 from collections import namedtuple
