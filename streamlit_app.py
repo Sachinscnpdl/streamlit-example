@@ -423,10 +423,10 @@ st.dataframe(my_tensor)
 
 # Display matrix as a table
 st.write("Matrix-like format:")
+
 # my_tensor = my_tensor.dataframe()
 st.text(my_df.to_string(index=False, header=False))
-st.write("Matrix:")
-st.write(my_tensor, type="text")
+
 
 
 #####################################################################
