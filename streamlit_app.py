@@ -431,26 +431,26 @@ st.write("Category is CAT :", y_tensor[0])
 # This is a working codes
 # matrixData = my_tensor
 # system('python setup.py install')
-# import matlab.engine
-# import numpy as np
+import matlab.engine
+import numpy as np
 
-# # Start the MATLAB Engine
-# eng = matlab.engine.start_matlab()
+# Start the MATLAB Engine
+eng = matlab.engine.start_matlab()
 
-# # Define the matrix in Python
-# matrixData = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+# Define the matrix in Python
+matrixData = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
-# # Convert the matrix to a MATLAB-compatible format
-# matlabMatrix = matlab.double(matrixData.tolist())
+# Convert the matrix to a MATLAB-compatible format
+matlabMatrix = matlab.double(matrixData.tolist())
 
-# # Assign the MATLAB matrix to a variable in the MATLAB workspace
-# eng.workspace['matrixData'] = matlabMatrix
+# Assign the MATLAB matrix to a variable in the MATLAB workspace
+eng.workspace['matrixData'] = matlabMatrix
 
-# # Convert the matrix to a tensor in MATLAB
-# eng.eval('tensorData = tensor(matrixData);', nargout=0)
+# Convert the matrix to a tensor in MATLAB
+eng.eval('tensorData = tensor(matrixData);', nargout=0)
 
-# # Visualize the tensor using surf function in MATLAB
-# eng.eval('surf(tensorData.directionalMagnitude)', nargout=0)
+# Visualize the tensor using surf function in MATLAB
+eng.eval('surf(tensorData.directionalMagnitude)', nargout=0)
 
 # # Quit the MATLAB Engine
 # # eng.quit()
