@@ -420,7 +420,11 @@ st.write("Category is CAT :", my_tensor)
 # Display matrix as a dataframe
 st.write("Matrix displayed as a dataframe:")
 st.write(np.array2string(my_tensor, formatter={'int':lambda x: f"[{x:2d}]"}))
+latex = np.array2string(my_tensor, formatter={'all': lambda x: f'{x}'}, separator=' & ',
+                        prefix='\\begin{bmatrix}\n', suffix='\n\\end{bmatrix}')
 
+# Display array in LaTeX form
+st.latex(latex)
 
 
 #####################################################################
