@@ -510,10 +510,18 @@ st.latex(matrix)
 import subprocess
 
 # Define the path to the file
-file_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/Piezoelectric Tensors/MatlabEngine.py"
+file_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/Piezoelectric Tensors/"
 
 # Add a download link to the Streamlit app
 st.download_button("Download Piezo Tensor", my_tensor)
+# Define the file path to save the NumPy array
+# file_path = "/path/to/save/my_array.npy"
+
+# Save the NumPy array to the specified file path
+np.save(file_path, my_tensor)
+
+# Add a download link to the Streamlit app
+st.download_button("Download NumPy Array", file_path)
 
 
 ###########################################################################################################
