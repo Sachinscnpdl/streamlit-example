@@ -512,11 +512,8 @@ import subprocess
 # Define the path to the file
 file_path = "~/Sachin Research/Piezoelectric_Research/Piezoelectric_codes/Codes_May 1/Piezoelectric Tensors/MatlabEngine.py"
 
-# Define the command to run the file
-command = f"python {file_path}"
-
-# Run the command using subprocess
-subprocess.run(command, shell=True)
+# Add a download link to the Streamlit app
+st.download_button("Download Piezo Tensor", my_tensor)
 
 
 ###########################################################################################################
