@@ -280,7 +280,7 @@ category = np.where(y_cat[:, 0] > 0.5, 'A', 'B')
 
 
 """
-st.write("Category is CAT :", category)
+st.write("Category :", category[0])
 #####################################################################
 subcategories = []
 y_tensor = []
@@ -325,7 +325,6 @@ else:
 
 ####################################################################
 """
-### The Crysrtal Structure with point
 
 
 """
@@ -429,10 +428,6 @@ my_tensor = np.where(my_tensor == 0.0, '0', my_tensor)
 
 
 """
-st.write("Category is CAT :", my_tensor)
-
-# Display matrix as a dataframe
-st.write("Matrix displayed as a dataframe:")
 
 # Define the matrix size
 rows = 3
