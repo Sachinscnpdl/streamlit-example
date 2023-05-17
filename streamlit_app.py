@@ -42,7 +42,7 @@ import pandas as pd
 
 
 # Set Streamlit app title
-st.title('Piezo Material Selection')
+st.title('Piezoelectric Material Selection')
 
 # Add an option to manually input a formula
 next_input = st.checkbox('Add next Piezo-Material')
