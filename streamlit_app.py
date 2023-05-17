@@ -99,6 +99,7 @@ featurizer = ElementProperty.from_preset('magpie')
 df_piezo = featurizer.featurize_dataframe(df_piezo, col_id='composition')
 #y = bg_data_featurized['gap expt']
 
+print("Feature Calculation in Progress")
 # In[5]:
 # get_ipython().run_line_magic('run', 'functions.ipynb')
 df, df_input_target = properties_calculation(df_piezo)
@@ -265,6 +266,8 @@ pca_1 = pickle.load(open(path+'pca_1.pkl','rb'))
 
 df_pca =  pca_1.transform(df_std)
 
+print("Classificastion in Progress")
+
 # In[13]:
 from tensorflow import keras
 model_cat = keras.models.load_model('model_files/nn_model/classification/model_cat.h5')
@@ -334,6 +337,7 @@ else:
 st.write("Crystal Structure is :", subcategories[0][0])
 #####################################################################
 # In[15]:
+print("Tensor Predictionsin Progress")
 
 import multiprocessing
 import os
